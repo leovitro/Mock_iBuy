@@ -1,0 +1,74 @@
+<html ng-app='mock_ibuy'>
+ 	<head>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angular-ui-router/1.0.0-rc.1/angular-ui-router.min.js"></script>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+				
+	    <link href="css/default.css" rel="stylesheet">
+		<script src="js/app.js"></script>  
+		<script src="js/controllers/index.js"></script>
+ 
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+	    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+	    <title>iBuy</title>
+	</head> 
+	<body ng-controller="index">    
+	    <nav class="navbar navbar-default navbar-static-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Trocar navegação</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span> 
+	          </button>
+	          <a class="navbar-brand" href="#">iBuy</a>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav">
+	            <li><a href="views/produtos.html">Lista de Produtos</a></li>
+	            <li><a href="#contatoModal" data-toggle="modal" data-target="#contatoModal">Contato</a></li>
+	          </ul>
+	          <ul class="nav navbar-nav navbar-right">
+	            <li><a href="views/login.html">Entrar</a></li>
+	          </ul>
+	        </div>
+	      </div>
+	    </nav>
+	    <div class="container">
+	      <div class="jumbotron"> 
+	        <h3>Loja iBuy</h3>
+	        <p>Venda de produtos diversos</p>
+	      </div>
+	    </div> 
+	    
+		<div ng-include="'views/rodape.html'"></div>
+		
+		
+		<div id="contatoModal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+		
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Contato</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>Desenvolvido por Leonardo Seiji De Vitro</p>
+		        <a href="mailto:leonardo.vitro@gmail.com">leonardo.vitro@gmail.com</a>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+		      </div>
+		    </div>
+		
+		  </div>
+		</div>
+	</body>
+</html>

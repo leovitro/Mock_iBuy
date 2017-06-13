@@ -1,0 +1,1 @@
+angular.module('mock_ibuy', []);

@@ -1,0 +1,48 @@
+<html ng-app='mock_ibuy'>
+ 	<head>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angular-ui-router/1.0.0-rc.1/angular-ui-router.min.js"></script>
+	    <script src="../js/angular/angular-locale_pt-br.js"></script>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+				
+	    <link href="../css/default.css" rel="stylesheet">
+		<script src="../js/app.js"></script> 
+		<script src="../js/controllers/produtos.js"></script>
+  
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>iBuy</title>
+	</head>
+  	<div ng-include="'cabecalho.html'"></div>
+	<body ng-controller="produtos"> 
+		 
+		<div class='jumbotron'>
+			<h4>Lista de Produtos</h4>
+			<input type="text" class="form-control" ng-model="filtroProdutos" placeholder="O que deseja comprar">
+			<table class="table table-striped">
+				<tr> 
+					<th><a href="" ng-click="ordenarProdutos('nome')">Produto</a></th>
+					<th>Quantidade em estoque</th>
+					<th><a href="" ng-click="ordenarProdutos('preco')">Preço</a></th>
+					<th>Adição</th>
+				</tr>
+				<tr ng-repeat="produto in produtos | filter:filtroProdutos | orderBy:ordenacaoProdutos:direcaoProdutos">
+					<td>{{produto.nome}}</td>
+					<td class="text-right">{{produto.quantidade | number:2}}</td>
+					<td class="text-right">{{produto.preco | currency}}</td>
+					<td class="text-center">
+						<button class='btn btn-primary' ng-click="adicionarProduto(produto)">
+							<span class="glyphicon glyphicon-plus"></span>
+						</button>
+					</td>
+				</tr>			
+			</table>
+		</div>
+		<div ng-include="'rodape.html'"></div>   		
+	</body>
+</html>
